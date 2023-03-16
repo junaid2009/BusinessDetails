@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-header class="header">
+      <mat-card-title>Profile</mat-card-title>
+      <button mat-button  mat-raised-button color="accent" (click)="openDialog()">Edit Profile</button>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+
+    <div class="p20 font16">
+        <div class="pT0L20 flex"> <div class="label bold">Name:</div> <div class="details"> {{ profileDetails.name}}</div> </div>    
+        <div class="pT0L20 flex"> <div class="bold label">Domain:</div> {{ profileDetails.domain}} </div>
+        <div class="pT0L20 flex"><div class="bold label">Gender:</div> {{profileDetails.gender}} </div>
+        <div class="pT0L20 flex"><div class="bold label">Date Of Birth:</div> {{ profileDetails.dob | date:'dd/MM/yyyy'}} </div>
+        <div class="pT0L20 flex"><div class="bold label">Phone Number:</div>{{ profileDetails.phone }} </div>
+        <div class="pT0L20 flex"><div class="bold label">Location:</div>{{ profileDetails.location }}</div>
+    </div>
+    
+  </mat-card>

@@ -1,0 +1,40 @@
+<h1 mat-dialog-title>Edit Profile</h1>
+<div mat-dialog-content [formGroup]="editProfileForm">
+
+    <mat-form-field class="full-width form-field">
+        <mat-label>Name</mat-label>
+        <input  formControlName="name" matInput type="text" >
+    </mat-form-field>
+    
+    <mat-form-field class="full-width form-field">
+        <mat-label>Domain</mat-label>
+        <input matInput formControlName="domain" type="text" >
+    </mat-form-field>
+    <mat-radio-group formControlName="gender" class="full-width form-field" aria-label="Select an option">
+        <mat-label>Gender</mat-label>
+        <mat-radio-button value="male">Male</mat-radio-button>
+        <mat-radio-button value="female">Female</mat-radio-button>
+    </mat-radio-group>
+      
+    <mat-form-field class="full-width form-field" appearance="fill">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="dob">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+        <mat-label>Phone</mat-label>
+        <span matPrefix>+91 &nbsp;</span>
+        <input type="tel" formControlName="phone" matInput placeholder="9999-555-123">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Location</mat-label>
+        <textarea matInput formControlName="location" placeholder="please u"></textarea>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" (click)="updatefield()" cdkFocusInitial>Update</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</div>
